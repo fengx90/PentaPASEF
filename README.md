@@ -1,3 +1,7 @@
+# DIA-PASEF (PentaPASEF Classic DIA) — R Post-processing + Scoring
+
+This repository contains two R scripts for analyzing **DIA-NN** results from a **PentaPASEF Classic DIA** experiment (example shown for the **45 min gradient**) and for computing **1–5 performance scores** for profiling depth and quantitative accuracy.
+
 # DIA-PASEF (PentaPASEF Classic DIA) — 45 min Gradient (DIA-NN → R analysis)
 
 This code contains an R workflow to post-process **DIA-NN** results for a **PentaPASEF Classic DIA** experiment (focused here on the **45 min gradient**). The script:
@@ -17,8 +21,6 @@ This code contains an R workflow to post-process **DIA-NN** results for a **Pent
 - Exports multiple CSV/TSV outputs, including a **MetaLab-ready** peptide intensity table
 
 ---
-
-
 
 # Scoring: Profiling Depth & Quantitative Accuracy (Peptides / Proteins)
 
@@ -71,8 +73,5 @@ Used for quantitative accuracy scoring; expected columns:
 - `ModifiedPeptide`    (for peptide universe / distinct counting)
 - `log2ratio`          (observed log2 ratio)
 - `ExpectedRatio`      (expected log2 ratio)
-
-> The code filters out background with:
-> `data1[!grepl("background", data1$species), ]`
 
 ---
