@@ -61,7 +61,7 @@ This code contains an R workflow to post-process **DIA-NN** results for a **Pent
 - Summarizes IDs (precursor/peptide counts)
 - Computes CVs (injection replicate and dilution replicate)
 - Produces dynamic range and quantitative accuracy benchmarking plots
-- Exports multiple CSV/TSV outputs, including a **MetaLab-ready** peptide intensity table
+- Exports multiple CSV/TSV outputs, including a **Unipept-ready** peptide intensity table for taxonomy annotation
 
 ## How to run
 - Export DIA-NN report as parquet: report.parquet
@@ -74,11 +74,9 @@ This code contains an R workflow to post-process **DIA-NN** results for a **Pent
 
 ### 1: False-assignment exclusion
 - precursors_to_exclude_basedOn_NGCtrl.csv
-
 ### 2: Precursor-level
 - Filtered_Precursors_all_FDR0.01.csv
 - Precursor_IDs.csv
-
 ### 3: Peptide-level (Modified.Sequence MaxLFQ)
 - Filtered_peptides_Quant_all_FDR0.01_45min.csv
 - ModifiedPeptides_IDs_45min.csv
@@ -113,12 +111,10 @@ This code computes **performance scores (1–5 scale)** for different DIA method
    - peptide-level scoring from `total_summary`
    - protein-level scoring from `total_summary_protein`
    - spike-in peptide depth scoring from `spike_df`
-
 2. **Quantitative accuracy scoring** for spike-in species (non-background) using:
    - absolute log2-ratio error vs expected ratio
    - stability penalty (CV of error)
    - **coverage penalty** (fewer peptides → lower score)
-
 All scoring is normalized **within each Gradient** (and in some cases within `Gradient × Group × Dilution_Replicate`) to produce a comparable 1–5 score.
 
 ## Inputs (required objects)
