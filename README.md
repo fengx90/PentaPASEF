@@ -8,7 +8,7 @@ This repository contains two R scripts for analyzing **DIA-NN** results from a *
 ## System requirements
 
 ### Operating system
-- Tested/assumed: **Windows 11** (based on the original absolute paths)
+- Tested/assumed: **Windows 11**
 - Should also work on **macOS/Linux** if you replace `setwd()` / file paths with platform-appropriate paths.
 
 ### R environment
